@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using VendorList.Models;
+@model List<Vendor>
+
+<h1>Stylists</h1>
+
+
+@* @if (Model != null && Model.Any())
+{
+@foreach (var stylist in Model)
+{
+<div>
+<h4># @stylist.ID - <a href="/Vendor/Orders/@vendor.ID">@vendor.Name</a> - @vendor.Desc</h4>
+</div>
+}
+}
+else
+{
+<h4>no vendors yet</h4>
+} *@
+
+
+<h4><a href='/new/stylist'>new stylist</a></h4>
