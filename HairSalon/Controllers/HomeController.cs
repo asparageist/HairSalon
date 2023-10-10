@@ -10,5 +10,11 @@ namespace HairSalon.Controllers
       return View();
     }
 
+    [HttpGet("/Menu")]
+    public ActionResult Menu()
+    {
+      return View();
+    }
+
   }
 }

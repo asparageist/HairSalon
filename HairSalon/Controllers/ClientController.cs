@@ -6,14 +6,14 @@ namespace HairSalon.Controllers
   public class ClientController : Controller
   {
 
-    // [HttpGet("Vendor/{vendorId}/AddOrder")]
-    // public ActionResult Orders(int vendorId)
+    // [HttpGet("Stylist/{stylistId}/AddClient")]
+    // public ActionResult Client(int stylistId)
     // {
-    //   Vendor vendor = ThoseWhoVend.GetVendorById(vendorId);
-    //   if (vendor == null)
-    //     return NotFound();
+    // Stylist stylist = ThoseWhoVend.GetVendorById(vendorId);
+    // if (vendor == null)
+    //   return NotFound();
 
-    //   return View("~/Views/New/Orders.cshtml", vendor);
+    // return View("~/Views/New/Orders.cshtml", vendor);
     // }
 
     // [HttpPost("Vendor/{vendorId}/AddOrder")]

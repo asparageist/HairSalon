@@ -1,0 +1,93 @@
+@font-face {
+  font-family: pixel;
+  src: url(fonts/PixelifySans-Regular.ttf);
+}
+
+a:link {
+  color:orange;
+}
+
+a:visited {
+  color:red;
+}
+
+a:hover {
+  color: white;
+}
+
+.img-glow {
+  font-size: 50px;
+  filter: drop-shadow(0 0 15px red);
+}
+
+.img-glow:hover {
+  font-size: 65px;
+  filter: drop-shadow(0 0 25px white);
+}
+
+body {
+  padding-top: 50px;
+  font-family: 'pixel';
+  font-size: xx-large;
+  text-shadow: rgba(10, 10, 10, 1) 5px 5px 10px;
+  background-color: rgb(44, 37, 53);
+  background-image: url('img/scissors.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:rgb(95, 95, 95);
+  background-position: center center;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.new::before {
+  content: 'clients';
+  display: none;
+  position: absolute;
+  left: 100%;
+  font-size: 25px;
+  color: black;
+}
+
+.new:hover::before {
+  display: grid;
+}
+
+.load::before {
+  content: 'stylists';
+  display: none;
+  position: absolute;
+  left: 100%;
+  font-size: 25px;
+  color: black;
+}
+
+.load:hover::before {
+  display: grid;
+}
+
+.options::before {
+  content: 'other';
+  display: none;
+  position: absolute;
+  font-size: 25px;
+  color: black;
+}
+
+.options:hover::before {
+  display: grid;
+}
+
+.exit::before {
+  content: 'br';
+  display: none;
+  position: absolute;
+  font-size: 25px;
+  color: black;
+}
+
+.exit:hover::before {
+  display: grid;
+}

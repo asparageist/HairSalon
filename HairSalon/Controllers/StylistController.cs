@@ -6,12 +6,12 @@ namespace HairSalon.Controllers
 {
   public class StylistController : Controller
   {
-    // [HttpGet("/vendor")]
-    // public ActionResult Index()
-    // {
-    //   List<Vendor> vendors = ThoseWhoVend.GetVendors();
-    //   return View(vendors);
-    // }
+    [HttpGet("/stylist")]
+    public ActionResult Index()
+    {
+      // List<Stylist> vendors = ThoseWhoVend.GetVendors();
+      return View();
+    }
 
     // [HttpGet("/vendor/orders/{id}")]
     // public ActionResult Orders(int id)
