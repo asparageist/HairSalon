@@ -6,17 +6,27 @@ namespace HairSalon.Controllers
   public class ClientController : Controller
   {
 
-    [HttpGet("Stylist/{stylistId}/AddClient")]
+    [HttpGet("/Client/{id}")]
     public ActionResult Client(int stylistId)
     {
       Stylist stylist = ThoseWhoStyle.GetStylistById(stylistId);
       if (stylist == null)
         return NotFound();
 
-      return View("~/Views/New/Clients.cshtml", stylist);
+      return View("Client/Index", stylist);
     }
 
-    [HttpPost("Stylist/{stylistId}/AddClient")]
+    [HttpGet("Stylist/{stylistId}/AddClient")]
+    public ActionResult ShowAddClientForm(int stylistId)
+    {
+      Stylist stylist = ThoseWhoStyle.GetStylistById(stylistId);
+      if (stylist == null)
+        return NotFound();
+
+      return View("~/Views/Client/New.cshtml", stylist);
+    }
+
+    [HttpPost("Stylist/{stylistId}/NewClient")]
     public ActionResult AddClient(int stylistId, string clientName)
     {
       Client newClient = new Client
@@ -24,7 +34,7 @@ namespace HairSalon.Controllers
         ClientName = clientName
       };
       ThoseWhoStyle.AddClient(stylistId, newClient);
-      return RedirectToAction("Clients", "Stylists", new { id = stylistId });
+      return RedirectToAction("Client", "Client", new { id = stylistId });
     }
 
   }

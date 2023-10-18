@@ -13,7 +13,7 @@
   @foreach (var stylist in Model)
   {
     <div>
-      <h4># @stylist.StylistID - <a href="/Stylist/Clients/@stylist.StylistID">@stylist.StylistName</a> -
+      <h4># @stylist.StylistID - <a href="/Stylist/@stylist.StylistID">@stylist.StylistName</a> -
         @stylist.StylistDescription</h4>
     </div>
   }

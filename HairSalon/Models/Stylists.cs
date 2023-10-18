@@ -19,8 +19,9 @@ namespace HairSalon.Models
     private static int _stylistID = 0;
     public static void AddStylist(Stylist stylist)
     {
+      _stylistID++;
+      stylist.StylistID = _stylistID;
       _instances.Add(stylist);
-      stylist.StylistID = _stylistID++;
     }
 
 

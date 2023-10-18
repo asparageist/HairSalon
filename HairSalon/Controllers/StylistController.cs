@@ -10,17 +10,17 @@ namespace HairSalon.Controllers
     public ActionResult Index()
     {
       List<Stylist> stylists = ThoseWhoStyle.GetStylists();
-      return View();
+      return View(stylists);
     }
 
-    [HttpGet("/stylist/clients/{id}")]
+    [HttpGet("stylist/{id}")]
     public ActionResult Clients(int id)
     {
       Stylist stylist = ThoseWhoStyle.GetStylistById(id);
 
       if (stylist == null)
         return NotFound();
-      return View(stylist);
+      return View("~/Views/Client/Index.cshtml", stylist);
     }
 
     [HttpPost("/stylist/add")]
@@ -40,7 +40,7 @@ namespace HairSalon.Controllers
     [HttpGet("/stylist/new")]
     public ActionResult AddStylist()
     {
-      return View("Views/Stylist/New.cshtml");
+      return View("New");
     }
 
 
