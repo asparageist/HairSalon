@@ -7,7 +7,7 @@
 
 <h1>@Model.StylistName - your client:</h1>
 
-<ul>
+<ul id="boxed">
   @if (Model.StylistClient != null && Model.StylistClient.Any())
   {
     foreach (var order in Model.StylistClient)

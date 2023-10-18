@@ -34,7 +34,7 @@ body {
   background-image: url('img/scissors.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color:rgb(95, 95, 95);
+  color:rgb(196, 196, 196);
   background-position: center center;
   margin: 0;
   display: grid;
@@ -90,4 +90,34 @@ body {
 
 .exit:hover::before {
   display: grid;
+}
+
+#boxed {
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color:rgba(43, 43, 43, 0.8);
+  outline: 2px solid rgba(196, 196, 196, 0.4);
+}
+
+#boxed:hover {
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color:rgba(94, 93, 93, 0.6);
+  outline: 3px solid rgba(196, 196, 196, 0.4);
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  font-family: 'pixel';
+  background-color:rgba(43, 43, 43, 0.8);
+  color: rgba(196, 196, 196);
+}
+
+button {
+  font-family: 'pixel';
+  background-color:rgba(43, 43, 43);
+  color: rgba(196, 196, 196);
 }
