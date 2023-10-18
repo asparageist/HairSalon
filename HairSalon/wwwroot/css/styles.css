@@ -100,9 +100,9 @@ body {
 }
 
 #boxed:hover {
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color:rgba(94, 93, 93, 0.6);
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color:rgba(94, 93, 93, 0.8);
   outline: 3px solid rgba(196, 196, 196, 0.4);
 }
 

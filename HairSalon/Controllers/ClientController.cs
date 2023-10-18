@@ -34,7 +34,7 @@ namespace HairSalon.Controllers
         ClientName = clientName
       };
       ThoseWhoStyle.AddClient(stylistId, newClient);
-      return RedirectToAction("Index", "Stylist", new { id = stylistId });
+      return RedirectToAction("Clients", "Stylist", new { id = stylistId });
     }
 
   }

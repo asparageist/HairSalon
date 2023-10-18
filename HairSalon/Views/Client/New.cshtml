@@ -6,12 +6,15 @@
 
 <h1>new client for @Model.StylistName</h1>
 
-<form id="boxed" method="post" action="/Stylist/@Model.StylistID/NewClient">
-  <div>
-    <label for="clientName">whozit:</label>
-    <input type="text" id="clientName" name="clientName" required />
-  </div>
-  <button type="submit">gimme</button>
-</form>
+<div id="boxed">
 
-<a href="/stylist">oops wrong stylist</a>
+  <form method="post" action="/Stylist/@Model.StylistID/NewClient">
+    <div>
+      <label for="clientName">whozit:</label>
+      <input type="text" id="clientName" name="clientName" required />
+    </div>
+    <button type="submit">gimme</button>
+  </form>
+
+  <a href="/stylist">oops wrong stylist</a>
+</div>
