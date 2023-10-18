@@ -37,10 +37,10 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/new/stylist")]
+    [HttpGet("/stylist/new")]
     public ActionResult AddStylist()
     {
-      return View("Views/New/Stylist.cshtml");
+      return View("Views/Stylist/New.cshtml");
     }
 
 
