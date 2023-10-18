@@ -8,19 +8,20 @@
 <h1>Stylists</h1>
 
 
-@* @if (Model != null && Model.Any())
+@if (Model != null && Model.Any())
 {
-@foreach (var stylist in Model)
-{
-<div>
-<h4># @stylist.ID - <a href="/Vendor/Orders/@vendor.ID">@vendor.Name</a> - @vendor.Desc</h4>
-</div>
-}
+  @foreach (var stylist in Model)
+  {
+    <div>
+      <h4># @stylist.StylistID - <a href="/Stylist/Clients/@stylist.StylistID">@stylist.StylistName</a> -
+        @stylist.StylistDescription</h4>
+    </div>
+  }
 }
 else
 {
-<h4>no vendors yet</h4>
-} *@
+  <h4>no stylists yet</h4>
+}
 
 
 <h4><a href='/new/stylist'>new stylist</a></h4>

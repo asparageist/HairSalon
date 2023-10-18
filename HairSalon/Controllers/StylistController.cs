@@ -9,39 +9,39 @@ namespace HairSalon.Controllers
     [HttpGet("/stylist")]
     public ActionResult Index()
     {
-      // List<Stylist> vendors = ThoseWhoVend.GetVendors();
+      List<Stylist> stylists = ThoseWhoStyle.GetStylists();
       return View();
     }
 
-    // [HttpGet("/vendor/orders/{id}")]
-    // public ActionResult Orders(int id)
-    // {
-    //   Vendor vendor = ThoseWhoVend.GetVendorById(id);
+    [HttpGet("/stylist/clients/{id}")]
+    public ActionResult Clients(int id)
+    {
+      Stylist stylist = ThoseWhoStyle.GetStylistById(id);
 
-    //   if (vendor == null)
-    //     return NotFound();
-    //   return View(vendor);
-    // }
+      if (stylist == null)
+        return NotFound();
+      return View(stylist);
+    }
 
-    // [HttpPost("/vendors/add")]
-    // public ActionResult Add(string Name, string Desc, int ID)
-    // {
-    //   Vendor newVendor = new Vendor
-    //   {
-    //     Name = Name,
-    //     Desc = Desc,
-    //     ID = ID
-    //   };
+    [HttpPost("/stylist/add")]
+    public ActionResult Add(string Name, string Desc, int ID)
+    {
+      Stylist newStylist = new Stylist
+      {
+        StylistName = Name,
+        StylistDescription = Desc,
+        StylistID = ID
+      };
 
-    //   ThoseWhoVend.AddVendor(newVendor);
-    //   return RedirectToAction("Index");
-    // }
+      ThoseWhoStyle.AddStylist(newStylist);
+      return RedirectToAction("Index");
+    }
 
-    // [HttpGet("/new/vendor")]
-    // public ActionResult AddVendors()
-    // {
-    //   return View("Views/New/Vendors.cshtml");
-    // }
+    [HttpGet("/new/stylist")]
+    public ActionResult AddStylist()
+    {
+      return View("Views/New/Stylist.cshtml");
+    }
 
 
   }

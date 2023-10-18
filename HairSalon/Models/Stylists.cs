@@ -13,35 +13,35 @@ namespace HairSalon.Models
 
   }
 
-  // public class ThoseWhoVend
-  // {
-  //   private static List<Vendor> _instances = new List<Vendor> { };
-  //   private static int _vendorID = 0;
-  //   public static void AddVendor(Vendor vendor)
-  //   {
-  //     _instances.Add(vendor);
-  //     vendor.ID = _vendorID++;
-  //   }
+  public class ThoseWhoStyle
+  {
+    private static List<Stylist> _instances = new List<Stylist> { };
+    private static int _stylistID = 0;
+    public static void AddStylist(Stylist stylist)
+    {
+      _instances.Add(stylist);
+      stylist.StylistID = _stylistID++;
+    }
 
 
-  //   public static List<Vendor> GetVendors()
-  //   {
-  //     return _instances;
-  //   }
+    public static List<Stylist> GetStylists()
+    {
+      return _instances;
+    }
 
-  //   public static Vendor GetVendorById(int id)
-  //   {
-  //     return _instances.Find(v => v.ID == id);
-  //   }
+    public static Stylist GetStylistById(int id)
+    {
+      return _instances.Find(v => v.StylistID == id);
+    }
 
-  //   public static void AddOrder(int vendorID, Order order)
-  //   {
-  //     Vendor vendor = _instances.Find(v => v.ID == vendorID);
-  //     if (vendor != null)
-  //     {
-  //       vendor.VendorOrder.Add(order);
-  //     }
-  //   }
-  // 
-  // }
+    public static void AddClient(int stylistID, Client client)
+    {
+      Stylist stylist = _instances.Find(v => v.StylistID == stylistID);
+      if (stylist != null)
+      {
+        stylist.StylistClient.Add(client);
+      }
+    }
+
+  }
 }

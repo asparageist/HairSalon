@@ -7,25 +7,25 @@
 
 <h1>@Model.StylistName - your client:</h1>
 
-@* <ul>
-@if (Model.VendorOrder != null && Model.VendorOrder.Any())
-{
-foreach (var order in Model.VendorOrder)
-{
-<li>@order.ItemName</li>
-}
-<a href="/Vendor/@Model.ID/AddOrder">another one?</a>
-<br>
-<a href="/Vendor">oops wrong vendor</a>
+<ul>
+  @if (Model.StylistClient != null && Model.StylistClient.Any())
+  {
+    foreach (var order in Model.StylistClient)
+    {
+      <li>@order.ClientName</li>
+    }
+    <a href="/Stylist/@Model.StylistID/AddClient">another one?</a>
+    <br>
+    <a href="/Stylist">oops wrong stylist</a>
 
-}
-else
-{
-<li>no orders yet, son</li>
-<a href="/Vendor/@Model.ID/AddOrder">add one</a>
-<br>
-<a href="/Vendor">oops wrong vendor</a>
+  }
+  else
+  {
+    <li>no clients yet, son</li>
+    <a href="/Stylist/@Model.StylistID/AddClient">add one</a>
+    <br>
+    <a href="/Stylist">oops wrong stylist</a>
 
-} *@
+  }
 
 </ul>
