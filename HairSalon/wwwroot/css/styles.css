@@ -121,3 +121,14 @@ button {
   background-color:rgba(43, 43, 43);
   color: rgba(196, 196, 196);
 }
+
+select {
+  font-family: 'pixel';
+  background-color:rgba(43, 43, 43);
+  color: rgba(196, 196, 196);
+}
+
+option:checked {
+  background-color:rgba(94, 93, 93, 0.8);
+
+}

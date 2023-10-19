@@ -4,17 +4,43 @@
 
 @model HairSalon.Models.Stylist
 
-<h1>new client for @Model.StylistName</h1>
+@if (Model == null || Model.StylistName == null)
+{
+  <h1>which stylist?</h1>
 
-<div id="boxed">
+  <div id="boxed">
+    <form method="post" action="/Stylist/NewClient">
+      <div>
+        <label for="clientName">what's your name</label>
+        <input type="text" id="clientName" name="clientName" required />
+        <br>
+        <label for="stylistId">pick someone</label>
+        <select name="stylistId" id="stylistId">
+          @foreach (var stylist in ViewBag.Stylists)
+          {
+            <option value="@stylist.StylistID">@stylist.StylistName</option>
+          }
+        </select>
+      </div>
+      <button type="submit">gimme</button>
+    </form>
+  </div>
+}
+else
+{
+  <h1>new client for @Model.StylistName</h1>
 
-  <form method="post" action="/Stylist/@Model.StylistID/NewClient">
-    <div>
-      <label for="clientName">whozit:</label>
-      <input type="text" id="clientName" name="clientName" required />
-    </div>
-    <button type="submit">gimme</button>
-  </form>
+  <div id="boxed">
 
-  <a href="/stylist">oops wrong stylist</a>
-</div>
+    <form method="post" action="/Stylist/@Model.StylistID/NewClient">
+      <div>
+        <label for="clientName">whozit:</label>
+        <input type="text" id="clientName" name="clientName" required />
+      </div>
+      <button type="submit">gimme</button>
+    </form>
+
+    <a href="/stylist">oops wrong stylist</a>
+  </div>
+}
+<h4 id="boxed"><a href='/stylist'>stylists</a><br><a href='/menu'>main menu</a></h4>
