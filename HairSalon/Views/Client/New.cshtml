@@ -20,33 +20,33 @@
         <label for="stylistId">pick someone</label>
         <select name="stylistId" id="stylistId">
 
-          @* @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
-        { *@
-
-          @foreach (var stylist in ViewBag.Stylists)
+          @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
           {
-            <option value="@stylist.StylistID">@stylist.StylistName</option>
+
+            @foreach (var stylist in ViewBag.Stylists)
+            {
+              <option value="@stylist.StylistID">@stylist.StylistName</option>
+            }
+
+
           }
+          else
+          {
+            <option>no stylists yet</option>
 
-
-          @* }
-        else
-        {
-        <option>no stylists yet</option>
-
-        } *@
+          }
 
 
         </select>
       </div>
 
 
-      @* @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
-    { *@
+      @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
+      {
 
-      <button type="submit">gimme</button>
+        <button type="submit">gimme</button>
 
-      @* } *@
+      }
 
 
 

@@ -43,6 +43,7 @@ namespace HairSalon.Controllers
       Client newClient = new Client
       {
         ClientName = clientName,
+        StylistID = stylistId
       };
       _db.Client.Add(newClient);
       _db.SaveChanges();
@@ -55,7 +56,8 @@ namespace HairSalon.Controllers
     {
       Client newClient = new Client
       {
-        ClientName = clientName
+        ClientName = clientName,
+        StylistID = stylistId
       };
       _db.Client.Add(newClient);
       _db.SaveChanges();
