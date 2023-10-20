@@ -96,14 +96,14 @@ body {
   padding-left: 2%;
   padding-right: 2%;
   background-color:rgba(43, 43, 43, 0.8);
-  outline: 2px solid rgba(196, 196, 196, 0.4);
+  outline: 4px solid rgba(196, 196, 196, 0.4);
 }
 
 #boxed:hover {
   padding-left: 2%;
   padding-right: 2%;
   background-color:rgba(94, 93, 93, 0.8);
-  outline: 3px solid rgba(196, 196, 196, 0.4);
+  outline: 8px solid rgba(196, 196, 196, 0.4);
 }
 
 form {

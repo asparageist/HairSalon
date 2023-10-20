@@ -3,6 +3,9 @@
 }
 
 @model HairSalon.Models.Stylist
+@using System.Linq
+
+
 
 @if (Model == null || Model.StylistName == null)
 {
@@ -16,13 +19,37 @@
         <br>
         <label for="stylistId">pick someone</label>
         <select name="stylistId" id="stylistId">
+
+          @* @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
+        { *@
+
           @foreach (var stylist in ViewBag.Stylists)
           {
             <option value="@stylist.StylistID">@stylist.StylistName</option>
           }
+
+
+          @* }
+        else
+        {
+        <option>no stylists yet</option>
+
+        } *@
+
+
         </select>
       </div>
+
+
+      @* @if (ViewBag.Stylists != null && ViewBag.Stylists.Any())
+    { *@
+
       <button type="submit">gimme</button>
+
+      @* } *@
+
+
+
     </form>
   </div>
 }
@@ -40,7 +67,13 @@ else
       <button type="submit">gimme</button>
     </form>
 
-    <a href="/stylist">oops wrong stylist</a>
+    <a href="/stylist">stylists</a>
   </div>
 }
+
+}
+
+
+
+
 <h4 id="boxed"><a href='/stylist'>stylists</a><br><a href='/menu'>main menu</a></h4>
