@@ -41,7 +41,7 @@ This app helps Claire to keep track of Stylists and Clients. Each Stylist has a 
 
 ## licensing info
 
-*Copyright (c) 9/7/2023 Joseph Murray
+*Copyright (c) 10/20/2023 Joseph Murray
 *MIT license below
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
