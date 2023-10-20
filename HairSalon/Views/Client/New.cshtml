@@ -5,8 +5,6 @@
 @model HairSalon.Models.Stylist
 @using System.Linq
 
-
-
 @if (Model == null || Model.StylistName == null)
 {
   <h1>which stylist?</h1>
@@ -27,28 +25,14 @@
             {
               <option value="@stylist.StylistID">@stylist.StylistName</option>
             }
-
-
           }
           else
           {
             <option>ain't nobody</option>
-
           }
-
-
         </select>
       </div>
-
-
-
-
       <button type="submit">gimme</button>
-
-
-
-
-
     </form>
   </div>
 }
@@ -68,10 +52,5 @@ else
 
   </div>
 }
-
 }
-
-
-
-
 <h4 id="boxed"><a href='/stylist'>stylists</a><br><a href='/menu'>main menu</a></h4>

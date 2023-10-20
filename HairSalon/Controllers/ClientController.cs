@@ -38,7 +38,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost("Stylist/{stylistId}/NewClient")]
-    public ActionResult AddClient(int stylistId, string clientName)
+    public ActionResult AddClientFromStylist(int stylistId, string clientName)
     {
       Client newClient = new Client
       {
@@ -52,7 +52,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost("Stylist/NewClient")]
-    public ActionResult AddClient(string clientName, int stylistId)
+    public ActionResult AddClientFromMenu(string clientName, int stylistId)
     {
       Client newClient = new Client
       {
