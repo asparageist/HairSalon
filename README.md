@@ -1,8 +1,8 @@
-# Pierre's Bakery Revisited
+# HairSalon
 
 #### By Joseph Murray
 
-#### An MCV app that keeps track of Pierre's customers and their orders
+#### An MCV app that keeps track of Claire's stylists and their clients.
 
 ## Technologies Used
 
@@ -12,18 +12,32 @@
 - ASP.NET Core
 - HTML
 - CSS
+- Razor Pages
 
 ## Description
 
-This app creates a list of Pierre's customers, assigns them a unique ID number and keeps track of all orders they make.
+This app helps Claire to keep track of Stylists and Clients. Each Stylist has a list of their own Clients, and each Client is faithful to only one Stylist. All elements of the app are saved to a local database for safekeeping.
 
 ## Setup/Installation Requirements
 
-- Clone the repository from http://github.com/asparageist/Vendors.git
-- Navigate to Vendors folder in the directory
-- Execute the following command in your terminal:
-- - dotnet run
-- Open the browser to https://localhost:5001
+- Note: An installation of the .NET SDK is required in order to run this application locally. [See Here](https://dotnet.microsoft.com/en-us/) for installation.
+
+1. Clone this repo.
+2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's directory called "HairSalon".
+3. Create a file named `appsettings.json`: `$ touch appsettings.json`
+4. Within `appsettings.json` add the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL.
+
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Server=localhost;Port=3306;database=joseph_murray;uid=[YOUR-USERNAME];pwd=[YOUR-MYSQL-PASSWORD];"
+     }
+   }
+   ```
+
+5. Set up the Database from the file `joseph_murray.sql`.
+6. Run `$ dotnet watch run` in the command line to start the project in development mode with a watcher.
+7. Open the browser at: _https://localhost:5001_.
 
 ## licensing info
 
