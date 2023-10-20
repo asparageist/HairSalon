@@ -1,16 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
+using System.Linq;
+using System.Data.Common;
+
 
 namespace HairSalon.Controllers
 {
   public class ClientController : Controller
   {
 
+    private readonly HairSalonContext _db;
+
+    public ClientController(HairSalonContext db)
+    {
+      _db = db;
+    }
+
     [HttpGet("/Client/{id}")]
     public ActionResult Client(int stylistId)
     {
-      Stylist stylist = ThoseWhoStyle.GetStylistById(stylistId);
+      Stylist stylist = _db.Stylist.FirstOrDefault(s => s.StylistID == stylistId);
       if (stylist == null)
         return NotFound();
 
@@ -20,7 +30,7 @@ namespace HairSalon.Controllers
     [HttpGet("Stylist/{stylistId}/AddClient")]
     public ActionResult ShowAddClientForm(int stylistId)
     {
-      Stylist stylist = ThoseWhoStyle.GetStylistById(stylistId);
+      Stylist stylist = _db.Stylist.FirstOrDefault(s => s.StylistID == stylistId);
       if (stylist == null)
         return NotFound();
 
@@ -32,9 +42,11 @@ namespace HairSalon.Controllers
     {
       Client newClient = new Client
       {
-        ClientName = clientName
+        ClientName = clientName,
       };
-      ThoseWhoStyle.AddClient(stylistId, newClient);
+      _db.Client.Add(newClient);
+      _db.SaveChanges();
+
       return RedirectToAction("Clients", "Stylist", new { id = stylistId });
     }
 
@@ -45,7 +57,9 @@ namespace HairSalon.Controllers
       {
         ClientName = clientName
       };
-      ThoseWhoStyle.AddClient(stylistId, newClient);
+      _db.Client.Add(newClient);
+      _db.SaveChanges();
+
       return RedirectToAction("Menu", "Home");
     }
 
@@ -53,7 +67,7 @@ namespace HairSalon.Controllers
     [HttpGet("/clients/new")]
     public ActionResult NewClient()
     {
-      List<Stylist> stylists = ThoseWhoStyle.GetStylists();
+      List<Stylist> stylists = _db.Stylist.ToList();
       ViewBag.Stylists = stylists;
       return View("~/Views/Client/New.cshtml");
     }

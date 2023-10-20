@@ -1,22 +1,30 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
   public class StylistController : Controller
   {
+    private readonly HairSalonContext _db;
+
+    public StylistController(HairSalonContext db)
+    {
+      _db = db;
+    }
+
     [HttpGet("/stylist")]
     public ActionResult Index()
     {
-      List<Stylist> stylists = ThoseWhoStyle.GetStylists();
+      List<Stylist> stylists = _db.Stylist.ToList();
       return View(stylists);
     }
 
     [HttpGet("stylist/{id}")]
     public ActionResult Clients(int id)
     {
-      Stylist stylist = ThoseWhoStyle.GetStylistById(id);
+      Stylist stylist = _db.Stylist.FirstOrDefault(s => s.StylistID == id);
 
       if (stylist == null)
         return NotFound();
@@ -28,12 +36,14 @@ namespace HairSalon.Controllers
     {
       Stylist newStylist = new Stylist
       {
+        StylistID = ID,
         StylistName = Name,
-        StylistDescription = Desc,
-        StylistID = ID
+        StylistDescription = Desc
       };
 
-      ThoseWhoStyle.AddStylist(newStylist);
+      _db.Stylist.Add(newStylist);
+      _db.SaveChanges();
+
       return RedirectToAction("Index");
     }
 
@@ -42,7 +52,5 @@ namespace HairSalon.Controllers
     {
       return View("New");
     }
-
-
   }
 }
